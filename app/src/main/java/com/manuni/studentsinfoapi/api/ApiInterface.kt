@@ -37,7 +37,7 @@ interface ApiInterface {
     @PUT(ApiEndPoints.UPLOADS)
     suspend fun updateProfile(@Body reqBody: Map<String, Any?>):ResultResponse
 
-    /* If your API requires a body, use @HTTP with hasBody = true. ✅
+    /* If your API requires a body, use @HTTP with hasBody = true.
    If your API only needs an ID as a query parameter, use @DELETE with @Query.*/
 
     /*@DELETE(AllApi.USER)
