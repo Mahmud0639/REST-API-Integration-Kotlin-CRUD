@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_5mdp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120mdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_10mdp"
+        app:cardElevation="@dimen/_2mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8mdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/studentImg"
+                        android:layout_width="@dimen/_40mdp"
+                        android:layout_height="@dimen/_40mdp"
+                       android:scaleType="centerCrop"
+                        android:src="@drawable/mypicn" />
+
+                    <TextView
+                        android:id="@+id/projectTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5mdp"
+                        android:layout_toEndOf="@id/studentImg"
+                        android:text="Project Name"
+                        android:layout_toStartOf="@id/deleteBtn"
+                        android:textColor="@color/base_api_color"
+                        android:textSize="@dimen/_14font_mdp"
+                        android:maxLines="2"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/deleteBtn"
+                        android:layout_width="@dimen/_70mdp"
+                        android:layout_height="@dimen/_40mdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="Delete"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_8font_mdp"
+                        android:backgroundTint="#ff22"/>
+
+
+                </RelativeLayout>
+                <TextView
+
+                    android:id="@+id/descriptionTxt"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:text="Description goes here Description goes here Description goes here Description goes here Description goes here Description goes here Description "
+                    android:textSize="@dimen/_12font_mdp"/>
+
+            </LinearLayout>
+
+<TextView
+    android:id="@+id/viewOrEditBtn"
+    android:layout_width="@dimen/_100mdp"
+    android:layout_height="wrap_content"
+    android:text="View / Edit"
+    android:background="@drawable/box_design_button"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentBottom="true"
+    android:padding="@dimen/_8mdp"
+    android:textColor="@color/white"
+    android:gravity="center"/>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

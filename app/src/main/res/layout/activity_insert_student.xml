@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_api_color"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headerSection"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250mdp"
+            android:background="@color/base_api_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                android:layout_width="@dimen/_85mdp"
+                android:layout_height="@dimen/_85mdp"
+                android:layout_marginTop="@dimen/_20mdp"
+                android:src="@drawable/avatar"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/_2mdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imagePick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/oval_white"
+                android:padding="@dimen/_3mdp"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toTopOf="@id/profilePic"
+                app:layout_constraintEnd_toEndOf="@id/profilePic"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintStart_toStartOf="@id/profilePic"
+                app:layout_constraintTop_toTopOf="@id/profilePic"
+                app:layout_constraintVertical_bias="0.1" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40mdp"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="10"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="@color/white"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@id/progressValue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profilePic" />
+
+            <TextView
+                android:id="@+id/progressValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5mdp"
+                android:text="8%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13font_mdp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/progressBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/progressBar" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30mdp"
+                android:layout_marginTop="@dimen/_12mdp"
+                android:layout_marginEnd="@dimen/_30mdp"
+                android:background="@drawable/edit_box_des"
+                android:padding="@dimen/_8mdp"
+                android:text="Hi,Believe in your journey. Every steps counts - today's effort shapes tomorrow's success."
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progressBar"
+                app:layout_constraintVertical_bias="0.2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F2F2F2"
+            app:cardCornerRadius="@dimen/_25mdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerSection">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/userProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20mdp"
+                    android:text="USER PROFILE"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/projectTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:text="Project Title"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_12font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userProfile" />
+
+
+                <EditText
+                    android:id="@+id/projectTitleET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5mdp"
+                    android:layout_marginEnd="@dimen/_10mdp"
+                    android:background="@drawable/edit_box_des"
+                    android:gravity="top|start"
+                    android:hint="Type Title"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:minLines="1"
+                    android:paddingStart="@dimen/_5mdp"
+                    android:scrollbars="vertical"
+                    android:textSize="@dimen/_13font_mdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/projectTitle"
+                    app:layout_constraintTop_toBottomOf="@id/userProfile" />
+
+
+                <TextView
+                    android:id="@+id/projectDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:layout_marginTop="@dimen/_10mdp"
+                    android:text="Description"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_12font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/projectTitle" />
+
+
+                <EditText
+                    android:id="@+id/projectDescET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5mdp"
+                    android:layout_marginTop="@dimen/_7mdp"
+                    android:layout_marginEnd="@dimen/_10mdp"
+                    android:background="@drawable/edit_box_des"
+                    android:gravity="top|start"
+                    android:hint="Write Description"
+                    android:inputType="textMultiLine"
+                    android:maxLines="8"
+                    android:minLines="4"
+                    android:paddingStart="@dimen/_5mdp"
+                    android:scrollbars="vertical"
+                    android:textSize="@dimen/_13font_mdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/projectDesc"
+                    app:layout_constraintTop_toBottomOf="@id/projectTitleET" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:text="User Name"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_9font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/projectDescET" />
+
+                <EditText
+                    android:id="@+id/userNameET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10mdp"
+                    android:background="@drawable/edit_box_bg"
+                    android:hint="Enter user name"
+                    android:paddingStart="@dimen/_50mdp"
+                    android:paddingTop="@dimen/_7mdp"
+                    android:paddingBottom="@dimen/_7mdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/userName"
+                    app:layout_constraintTop_toBottomOf="@id/userName" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5mdp"
+                    android:background="@drawable/oval_purple"
+                    android:padding="@dimen/_5mdp"
+                    android:src="@drawable/ic_user_man"
+                    app:layout_constraintBottom_toBottomOf="@id/userNameET"
+                    app:layout_constraintStart_toStartOf="@id/userNameET"
+                    app:layout_constraintTop_toTopOf="@id/userNameET" />
+
+
+                <TextView
+                    android:id="@+id/userMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:layout_marginTop="@dimen/_7mdp"
+                    android:text="Mobile Number"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_9font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userNameET" />
+
+                <EditText
+                    android:id="@+id/userPhoneET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10mdp"
+                    android:background="@drawable/edit_box_bg"
+                    android:hint="Enter phone"
+                    android:paddingStart="@dimen/_50mdp"
+                    android:paddingTop="@dimen/_7mdp"
+                    android:paddingBottom="@dimen/_7mdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/userName"
+                    app:layout_constraintTop_toBottomOf="@id/userMobile" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5mdp"
+                    android:background="@drawable/oval_purple"
+                    android:padding="@dimen/_5mdp"
+                    android:src="@drawable/ic_phone"
+                    app:layout_constraintBottom_toBottomOf="@id/userPhoneET"
+                    app:layout_constraintStart_toStartOf="@id/userPhoneET"
+                    app:layout_constraintTop_toTopOf="@id/userPhoneET" />
+
+
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:layout_marginTop="@dimen/_7mdp"
+                    android:text="User Email"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_9font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userPhoneET" />
+
+                <EditText
+                    android:id="@+id/userEmailET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10mdp"
+                    android:background="@drawable/edit_box_bg"
+                    android:hint="Enter email"
+                    android:paddingStart="@dimen/_50mdp"
+                    android:paddingTop="@dimen/_7mdp"
+                    android:paddingBottom="@dimen/_7mdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/userName"
+                    app:layout_constraintTop_toBottomOf="@id/userEmail" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5mdp"
+                    android:background="@drawable/oval_purple"
+                    android:padding="@dimen/_5mdp"
+                    android:src="@drawable/ic_email"
+                    app:layout_constraintBottom_toBottomOf="@id/userEmailET"
+                    app:layout_constraintStart_toStartOf="@id/userEmailET"
+                    app:layout_constraintTop_toTopOf="@id/userEmailET" />
+
+                <TextView
+                    android:id="@+id/departmentTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Department"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_9font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/userEmailET"
+                    app:layout_constraintStart_toStartOf="@id/userEmailET"
+                    android:layout_marginTop="@dimen/_5mdp"/>
+
+                <Spinner
+                    android:id="@+id/deptSpinner"
+                    android:layout_width="@dimen/_80mdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:layout_marginTop="@dimen/_7mdp"
+                    android:backgroundTint="#8A8989"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/departmentTxt"/>
+
+                <TextView
+                    android:id="@+id/subjectTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    android:text="Your Subjects"
+                    android:textColor="@color/base_api_color"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_9font_mdp"
+                    app:layout_constraintStart_toStartOf="@id/deptSpinner"
+                    app:layout_constraintTop_toBottomOf="@id/deptSpinner"/>
+
+
+                <LinearLayout
+                    android:id="@+id/checkBoxContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    app:layout_constraintTop_toBottomOf="@id/subjectTxt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <CheckBox
+                        android:id="@+id/checkbox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject 1"/>
+                     <CheckBox
+                        android:id="@+id/checkbox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject 2"/>
+                     <CheckBox
+                        android:id="@+id/checkbox3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject 3"/>
+                     <CheckBox
+                        android:id="@+id/checkbox4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject 4"/>
+                     <CheckBox
+                        android:id="@+id/checkbox5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject 5"/>
+                     <CheckBox
+                        android:id="@+id/checkbox6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subject 6"/>
+
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/creditTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10mdp"
+                    android:text="Earned Credits"
+                    android:layout_marginTop="@dimen/_5mdp"
+                    android:textColor="@color/base_api_color"
+                    android:textSize="@dimen/_9font_mdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/checkBoxContainer" />
+
+                <EditText
+                    android:id="@+id/creditET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10mdp"
+                    android:background="@drawable/edit_box_bg"
+                    android:hint="Enter credit"
+                    android:paddingStart="@dimen/_50mdp"
+                    android:paddingTop="@dimen/_7mdp"
+                    android:paddingBottom="@dimen/_7mdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/creditTxt"
+                    app:layout_constraintTop_toBottomOf="@id/creditTxt" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5mdp"
+                    android:background="@drawable/oval_purple"
+                    android:padding="@dimen/_5mdp"
+                    android:src="@drawable/ic_credit"
+                    app:layout_constraintBottom_toBottomOf="@id/creditET"
+                    app:layout_constraintStart_toStartOf="@id/creditET"
+                    app:layout_constraintTop_toTopOf="@id/creditET" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30mdp"
+                    app:layout_constraintTop_toBottomOf="@id/creditET"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_14mdp"
+                    android:text="Save Info"
+                    android:background="@drawable/save_btn_effect"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13font_mdp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

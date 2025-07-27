@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCDBDB"
+    tools:context=".activity.HomeActivity">
+
+
+    <TextView
+        android:id="@+id/infoTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30mdp"
+        android:text="Students Info"
+        android:textColor="@color/base_api_color"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/addStudentCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:cardCornerRadius="@dimen/_10mdp"
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintTop_toBottomOf="@id/infoTxt">
+
+
+
+        <LinearLayout
+            android:id="@+id/addStudent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Add Icon"
+                android:src="@drawable/ic_add" />
+
+            <TextView
+                android:id="@+id/studentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Student"
+                android:layout_marginStart="@dimen/_5mdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/searchCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+
+        app:layout_constraintTop_toBottomOf="@id/addStudentCardView">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textInputSearch"
+                android:layout_marginStart="@dimen/_5mdp"
+                android:layout_marginTop="@dimen/_3mdp"
+                android:layout_marginEnd="@dimen/_3mdp"
+                android:layout_marginBottom="@dimen/_3mdp"
+                app:endIconMode="clear_text"
+                app:hintEnabled="false"
+                app:boxBackgroundMode="outline"
+                >
+
+                <EditText
+                    android:id="@+id/searchET"
+                    android:textSize="@dimen/_12font_mdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rect"
+                    android:drawableStart="@drawable/ic_search_gray"
+                    android:drawablePadding="@dimen/_7mdp"
+                    android:hint="Search"
+                    android:padding="@dimen/_6mdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#919090" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/search"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:contentDescription="Add Icon"-->
+            <!--                android:src="@drawable/ic_search_gray" />-->
+
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/previousStudentTxt"
+        app:layout_constraintTop_toBottomOf="@id/searchCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="@dimen/_15mdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14font_mdp"
+        android:text="Previous Students Info"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/previousStudentTxt"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/studentsRV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10mdp"
+            tools:listitem="@layout/student_profile_item" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="#ff22"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
